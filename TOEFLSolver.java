@@ -4,6 +4,17 @@ import java.util.Scanner;
 
 public class TOEFLSolver {
 
+	
+	public void getSentenceLists(String text){
+		
+		
+		
+		
+		
+	}
+	
+	
+	
 	public static void main(String[] args) {
 		
 		File file1 = new File("pg2600");
