@@ -10,14 +10,17 @@ public class VectorWord {
 		this.name = word;
 		try {
 			// File file=new File("pg2600.txt");
-			Scanner sc = new Scanner(s);
-			while (sc.hasNext()) {
-				text = sc.next();
+			
+			for(int i=0;i<s.size();i++) {
+				Sentence temp = s.get(i);
+				for(int j =0; j<temp.size();i++)
+				text = temp.get(j);
 				if (text != name) {
 					if (!this.words.containsKey(text)) {
 						this.words.put(text, 1);
 					} else {
 						this.words.put(text, words.get(text) + 1);
+				
 					}
 				}
 
@@ -26,12 +29,12 @@ public class VectorWord {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		printWords(this.words);
+
 	}
 
-	public void printWords(HashMap<String, Integer> h) {
-		for (String key : h.keySet()) {
-			Integer count = h.get(key);
+	public void printWords() {
+		for (String key : words.keySet()) {
+			Integer count = words.get(key);
 			System.out.println("The word " + key + " occurs " + count.intValue());
 		}
 	}
