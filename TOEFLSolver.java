@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TOEFLSolver {
@@ -10,7 +11,7 @@ public class TOEFLSolver {
 
 	public static void main(String[] args) throws FileNotFoundException {
 
-		File file1 = new File("pg2600.txt");
+		File file1 = new File("temp.txt");
 		File file2 = new File("pg7178.txt");
 
 		Scanner scan1 = new Scanner(file1);
@@ -32,8 +33,18 @@ public class TOEFLSolver {
 			textF2 = textF2 + scan1.nextLine();
 		}
 		
+		String[]	keimeno = textF1.split("\\.");
 		
-		System.out.println(textF1);
+		ArrayList<Sentence> prot = new ArrayList<Sentence>();
+		
+		for(int i =0; i< keimeno.length; i++){
+			
+			prot.add(new Sentence(keimeno[i]));
+			
+		}
+		
+		VectorWord vector = new VectorWord(prot, "may");
+		vector.printWords();
 		
 		
 		
