@@ -11,7 +11,7 @@ public class Sentence {
 		
 		for(int i=0;i<tokenised.length ;i++){
 			
-			if (tokenised[i].charAt(tokenised[i].length() -1) == '.' ||  tokenised[i].charAt(tokenised[i].length() -1) == '!' ||  tokenised[i].charAt(tokenised[i].length() -1) == ','){
+			if (tokenised[i].charAt(tokenised[i].length() -1) == '.' ||  tokenised[i].charAt(tokenised[i].length() -1) == '!' ||  tokenised[i].charAt(tokenised[i].length() -1) == ';'){
 				
 				String temp = tokenised[i].substring(0, tokenised[i].length() -1);
 				
@@ -37,6 +37,15 @@ public class Sentence {
 			System.out.println(list.get(t));
 		}
 		
+	}
+
+	public int size() {
+		return this.list.size();
+
+	}
+
+	public String get(int j) {
+		return this.list.get(j);
 	}
 	
 	
