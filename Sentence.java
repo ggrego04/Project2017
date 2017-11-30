@@ -7,14 +7,12 @@ public class Sentence {
 	public Sentence(String text){
 				
 		
-		String[] tokenised	= text.split("\\ ");
+		String [] tokenised	= text.split("'|\\ +|\\,|\\:");
 		
 		for(int i=0;i<tokenised.length ;i++){
-			if (tokenised[i].charAt(tokenised[i].length() -1) == '.' ||  tokenised[i].charAt(tokenised[i].length() -1) == '!' ||  tokenised[i].charAt(tokenised[i].length() -1) == ','){
-				String temp = tokenised[i].substring(0, tokenised[i].length() -1);
-				tokenised[i] = temp;	
-			}			
-			list.add(tokenised[i]);	
+			if(!tokenised[i].isEmpty()) {	
+			list.add(tokenised[i]);
+			}
 		}
 	}
 	
