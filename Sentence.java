@@ -10,24 +10,12 @@ public class Sentence {
 		String[] tokenised	= text.split("\\ ");
 		
 		for(int i=0;i<tokenised.length ;i++){
-			
-			if (tokenised[i].charAt(tokenised[i].length() -1) == '.' ||  tokenised[i].charAt(tokenised[i].length() -1) == '!' ||  tokenised[i].charAt(tokenised[i].length() -1) == ';'){
-				
+			if (tokenised[i].charAt(tokenised[i].length() -1) == '.' ||  tokenised[i].charAt(tokenised[i].length() -1) == '!' ||  tokenised[i].charAt(tokenised[i].length() -1) == ','){
 				String temp = tokenised[i].substring(0, tokenised[i].length() -1);
-				
-				tokenised[i] = temp;
-				
-			}
-				
-			list.add(tokenised[i]);
-				
-			
-			
-			
+				tokenised[i] = temp;	
+			}			
+			list.add(tokenised[i]);	
 		}
-		
-		
-		
 	}
 	
 	public void print(){
@@ -47,7 +35,9 @@ public class Sentence {
 	public String get(int j) {
 		return this.list.get(j);
 	}
-	
+	public ArrayList<String> getList() {
+		return list;
+	}
 	
 	
 	
